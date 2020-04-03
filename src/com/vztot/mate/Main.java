@@ -1,7 +1,6 @@
 package com.vztot.mate;
 
 import com.vztot.mate.figures.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
