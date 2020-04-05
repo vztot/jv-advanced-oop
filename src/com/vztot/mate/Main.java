@@ -10,9 +10,8 @@ public class Main {
         List<Drawable> list = new ArrayList<>();
 
         int count = (int) (Math.random() * 100 + 1);
-
         for (int i = 0; i < count; i++) {
-            list.add(FigureBuilder.buildRandomFigure());
+            list.add(FigureFactory.createRandomFigure());
         }
         for (Drawable figure : list) {
             figure.draw();

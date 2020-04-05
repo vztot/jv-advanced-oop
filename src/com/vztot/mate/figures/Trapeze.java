@@ -2,23 +2,28 @@ package com.vztot.mate.figures;
 
 public class Trapeze extends Figure implements Drawable {
 
-    private double sideA;
-    private double sideB;
+    private double lengthOfHigherSide;
+    private double lengthOfLowerSide;
     private double height;
 
-    public Trapeze(String color, double sideA, double sideB, double height) {
-        super("трапеция", color, (sideA + sideB) * height * 0.5);
-        this.sideA = sideA;
-        this.sideB = sideB;
+    public Trapeze(String color,
+                   double lengthOfHigherSide,
+                   double lengthOfLowerSide,
+                   double height) {
+        super("трапеция",
+                color,
+                (lengthOfHigherSide + lengthOfLowerSide) * height * 0.5);
+        this.lengthOfHigherSide = lengthOfHigherSide;
+        this.lengthOfLowerSide = lengthOfLowerSide;
         this.height = height;
     }
 
-    public double getSideA() {
-        return sideA;
+    public double getLengthOfHigherSide() {
+        return lengthOfHigherSide;
     }
 
-    public double getSideB() {
-        return sideB;
+    public double getLengthOfLowerSide() {
+        return lengthOfLowerSide;
     }
 
     public double getHeight() {
@@ -34,8 +39,8 @@ public class Trapeze extends Figure implements Drawable {
                         + " цвет: %s\n",
                 getName(),
                 getArea(),
-                getSideA(),
-                getSideB(),
+                getLengthOfHigherSide(),
+                getLengthOfLowerSide(),
                 getHeight(),
                 getColor()
         );

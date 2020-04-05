@@ -6,9 +6,12 @@ import com.vztot.mate.figures.Square;
 import com.vztot.mate.figures.Trapeze;
 import com.vztot.mate.figures.Triangle;
 
-public class FigureBuilder {
+public class FigureFactory {
 
-    public static Drawable buildRandomFigure() {
+    public static Drawable createRandomFigure() {
+
+        Drawable figure = null;
+
         String[] colors = {
                 "красный", "оранжевый", "жёлтый",
                 "зелёный", "голубой", "синий",
@@ -20,26 +23,32 @@ public class FigureBuilder {
 
         switch (randomFigureValue) {
             case 0: {
-                return new Square(colors[randomColorValue],
+                figure = new Square(colors[randomColorValue],
                         getRandomDoubleValue());
+                break;
             }
             case 1: {
-                return new Triangle(colors[randomColorValue],
+                figure = new Triangle(colors[randomColorValue],
                         getRandomDoubleValue(),
                         getRandomDoubleValue());
+                break;
             }
             case 2: {
-                return new Circle(colors[randomColorValue],
+                figure = new Circle(colors[randomColorValue],
                         getRandomDoubleValue());
+                break;
             }
             case 3: {
-                return new Trapeze(colors[randomColorValue],
+                figure = new Trapeze(colors[randomColorValue],
                         getRandomDoubleValue(),
                         getRandomDoubleValue(),
                         getRandomDoubleValue());
+                break;
+            }
+            default: {
             }
         }
-        return null;
+        return figure;
     }
 
     static private double getRandomDoubleValue() {
